@@ -1,5 +1,5 @@
 import { IDish } from '../../types';
-import Dish from '../Dish/Dish';
+import Dish from '../Dish/component';
 
 interface Props {
   data: IDish[];
@@ -11,7 +11,7 @@ export default function Menu({ data }: Props) {
       <h3>Menu</h3>
       <ul>
         {data.map((dish) => (
-          <li>
+          <li key={dish.id}>
             <Dish data={dish} />
           </li>
         ))}

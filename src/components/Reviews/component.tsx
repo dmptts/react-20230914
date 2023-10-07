@@ -1,5 +1,5 @@
 import { IReview } from '../../types';
-import Review from '../Review/Review';
+import Review from '../Review/component';
 
 interface Props {
   data: IReview[];
@@ -11,7 +11,7 @@ export default function Reviews({ data }: Props) {
       <h3>Отзывы</h3>
       <ul>
         {data.map((review) => (
-          <li>
+          <li key={review.id}>
             <Review data={review} />
           </li>
         ))}

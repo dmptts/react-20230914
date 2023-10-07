@@ -1,5 +1,6 @@
 import { IRestaurant } from '../../types';
-import Menu from '../Menu/Menu';
+import Container from '../Container/component';
+import Menu from '../Menu/component';
 import Reviews from '../Reviews/component';
 
 interface Props {
@@ -8,10 +9,10 @@ interface Props {
 
 export default function Restaurant({ restaurant }: Props) {
   return (
-    <div>
+    <Container>
       <h2>{restaurant.name}</h2>
       <Menu data={restaurant.menu} />
       <Reviews data={restaurant.reviews} />
-    </div>
+    </Container>
   );
 }

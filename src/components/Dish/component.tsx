@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { IDish } from '../../types';
+import Button from '../Button/component';
 
 interface Props {
   data: IDish;
@@ -11,13 +12,13 @@ export default function Dish({ data }: Props) {
   return (
     <div>
       {data.name}
-      <button disabled={amount === 0} onClick={() => setAmount(amount - 1)}>
+      <Button disabled={amount === 0} onClick={() => setAmount(amount - 1)}>
         -
-      </button>
+      </Button>
       {amount}
-      <button disabled={amount === 5} onClick={() => setAmount(amount + 1)}>
+      <Button disabled={amount === 5} onClick={() => setAmount(amount + 1)}>
         +
-      </button>
+      </Button>
     </div>
   );
 }
