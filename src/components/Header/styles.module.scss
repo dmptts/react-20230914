@@ -1,0 +1,12 @@
+.root {
+  width: 100%;
+
+  background-color: #ffffff;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+
+  min-height: 50px;
+}
