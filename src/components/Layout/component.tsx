@@ -9,6 +9,7 @@ export default function Layout({ children }: PropsWithChildren) {
       <Header className={styles.header} />
       <main className={styles.main}>{children}</main>
       <Footer />
+      <div id="modal-container" className={styles.modalContainer}></div>
     </>
   );
 }

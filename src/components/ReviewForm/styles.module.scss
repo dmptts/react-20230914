@@ -1,0 +1,23 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  width: 300px;
+}
+
+.textarea {
+  width: 300px;
+  height: 150px;
+}
+
+.label {
+  font-family: inherit;
+}

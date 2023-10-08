@@ -1,5 +1,6 @@
 import { useReducer } from 'react';
 import Button from '../Button/component';
+import styles from './styles.module.scss';
 
 type Action =
   | { type: 'setName'; payload: string }
@@ -28,23 +29,35 @@ export default function ReviewForm() {
   const [formValue, dispatch] = useReducer(reducer, INITIAL_STATE);
 
   return (
-    <form>
-      <input
-        type="text"
-        id="name-field"
-        value={formValue.name}
-        onChange={(e) => dispatch({ type: 'setName', payload: e.target.value })}
-      />
-      <label htmlFor="name-field">Ваше Имя</label>
-      <textarea
-        name="review-text"
-        id="review-field"
-        value={formValue.reviewText}
-        onChange={(e) =>
-          dispatch({ type: 'setReviewText', payload: e.target.value })
-        }
-      ></textarea>
-      <label htmlFor="review-field">Отзыв</label>
+    <form className={styles.root}>
+      <div className={styles.inputWrapper}>
+        <label htmlFor="name-field" className={styles.label}>
+          Ваше Имя
+        </label>
+        <input
+          type="text"
+          id="name-field"
+          className={styles.input}
+          value={formValue.name}
+          onChange={(e) =>
+            dispatch({ type: 'setName', payload: e.target.value })
+          }
+        />
+      </div>
+      <div className={styles.inputWrapper}>
+        <label htmlFor="review-field" className={styles.label}>
+          Отзыв
+        </label>
+        <textarea
+          name="review-text"
+          id="review-field"
+          className={styles.textarea}
+          value={formValue.reviewText}
+          onChange={(e) =>
+            dispatch({ type: 'setReviewText', payload: e.target.value })
+          }
+        ></textarea>
+      </div>
       <Button
         type="submit"
         onClick={(e) => {
